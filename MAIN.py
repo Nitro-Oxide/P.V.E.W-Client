@@ -36,7 +36,7 @@ class MainWindow(qtw.QWidget):
             curr = Functions.Air_Quality()
             post_label = qtw.QLabel(f""""
             Wind Speed: {config.data_ws},{Functions.check_wind(entry.text)}
-            Temperature: {config.data_temp} centigrade, {Functions.check_temp(entry.text)}
+            Temperature: {config.data_temp - 273} centigrade, {Functions.check_temp(entry.text)}
             Rain: {config.data_rf}%, {Functions.check_rain(entry.text)}
             Air Quality: {curr.check_air(entry.text)}
                                     """)

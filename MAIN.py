@@ -32,6 +32,7 @@ class MainWindow(qtw.QWidget):
             demo.exec_()
         
         def Button_Press():
+            button.setText("Refresh")
             curr = Functions.Air_Quality()
             post_label = qtw.QLabel(f""""
             Wind Speed: {config.data_ws},{Functions.check_wind(entry.text)}

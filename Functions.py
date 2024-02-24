@@ -17,7 +17,7 @@ class Air_Quality:
             email_functions.Send_Alert("Warning: Poor Air Quality", email)
             return "Warning: Air Quality"
         else:
-            return "No Hazard Detected"
+            return "Air is safe"
 
 def check_temp(email):
     if (config.data_temp - 273 > 38):

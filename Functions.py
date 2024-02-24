@@ -23,6 +23,9 @@ def check_temp(email):
     if (config.data_temp - 273 > 38):
         email_functions.Send_Alert("Warning: Extreme Heat",email)
         return "Warning: Extreme Heat"
+    elif (config.data_temp - 273 < 0):
+        email_functions.Send_Alert("Warning: Extreme Cold",email)
+        return "Warning: Extreme Cold"
     else:
         return "No Hazard Detected"
 

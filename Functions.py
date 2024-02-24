@@ -16,26 +16,26 @@ class Air_Quality:
         if (self.SO2 > 250 or self.NO2 > 150 or self.PM10 > 100 or self.PM2_5 > 50 or self.O3 > 140 or self.CO > 12400 ):
             email_functions.Send_Alert("Warning: Poor Air Quality", email)
         else:
-            print("Request Works")
+            return "No Hazard Detected"
 
 def check_temp(email):
     if (config.data_temp - 273 > 38):
         email_functions.Send_Alert("Warning: Extreme Heat",email)
     else:
-        print("Request Works")
+        return "No Hazard Detected"
 
 def check_wind(email):
     if (config.data_ws > 17):
         email_functions.Send_Alert("Warning: Violent Wind",email)
     else:
-        print("Request Works")
+        return "No Hazard Detected"
 
 def check_rain(email):
     if(config.data_r['list'][7]['pop'] == 0):
-        print("Request Works, no rain")
+       return "No Hazard Detected, no rain"
     elif (config.data_r['list'][8]['3h'] > 50):
         email_functions.Send_Alert("Warning: Flooding incoming in 5 days", email)
     else:
-        print("Request Works")
+        return "No Hazard Detected"
      
 

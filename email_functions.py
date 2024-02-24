@@ -3,7 +3,7 @@ import smtplib
 def Send_Alert(subject, target):
     sender = "PVEWOffical@outlook.com"
     recipient = target
-    message = "This is an Alert. We Suspect that your current surrounding are no longer safe, evacuation recommended"
+    message = "This is a demonstration of our powers of communication"
 
     email = EmailMessage()
     email["From"] = sender
@@ -11,8 +11,9 @@ def Send_Alert(subject, target):
     email["Subject"] = subject
     email.set_content(message)
 
-    smtp = smtplib.SMTP("smtp-mail.outlook.com", port=25)
+    smtp = smtplib.SMTP("smtp-mail.outlook.com", port=465)
     smtp.starttls()
     smtp.login(sender, "Burner.Lord123")
     smtp.sendmail(sender, recipient, email.as_string())
     smtp.quit() 
+
